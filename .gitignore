@@ -1,5 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+# Enviroment variables
+/src/environment/environment.stage.ts
+
 # Compiled output
 /dist
 /tmp
