@@ -1,0 +1,21 @@
+<!-- <div class="cardmovie"> -->
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="movie-catalog">
+        <div class="col" *ngFor="let movie of movies.results">
+            <div class="card mb-3" style="--i:url({{urlGetImage}}{{movie.poster_path}})">
+                <!-- <img src="{{urlGetImage}}{{item.poster_path}}" class="card-img-top"> -->
+                <!-- <img src="" class="card-img-top" style="--i:url({{urlGetImage}}{{movie.poster_path}})"> -->
+                <div class="content">
+                    <h2>{{movie.title}}</h2>
+                    <h5>
+                        Calificación:
+                        <span class="badge rounded-pill bg-warning text-dark">{{movie.vote_average}}</span>
+                    </h5>
+                    <p>{{movie.overview}}</p>
+                    <a [routerLink]="['/movie',movie.id]" class="card-link">
+                        <button type="submit" class="btn btn-outline-danger">Ver detalle</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div> 
+<!-- </div> -->

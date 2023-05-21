@@ -1,0 +1,42 @@
+*
+    // margin: 0
+    // padding: 0
+    box-sizing: border-box
+    font-family: sans-serif
+
+.row .col .card
+    width: 500px
+    height: 600px
+    border-radius: 5px
+    // background: var(--i)
+    background-image: var(--i)
+    background-size: cover
+    box-shadow: 3px 15px 15px #02121ccc
+    // overflow: hidden
+
+.row .col .card .content
+    width: 100%
+    height: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    background: rgba(0, 0, 0, 0.779)
+    opacity: 0
+    transition: .5s
+    padding: 50px
+
+.row .col .card .content span.badge
+    font-size: 17px
+
+.row .col .card .content h2, h5, p, a
+    font-weight: bold
+    color: #ffffff
+    margin: 10px 0
+.row .col .card .content h5
+
+
+
+.row .col .card:hover .content
+    opacity: 1
+

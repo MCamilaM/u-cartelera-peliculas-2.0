@@ -1,29 +1,31 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { environment } from '../../environment/environment.stage';
+import { ListMovie } from '../models/listmovie-i.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ApiListMovieService {
 
-  private url: string = '';
+  private url: string = 'https://api.themoviedb.org/3/movie/now_playing';
 
   constructor(private http: HttpClient) { }
 
-  public getMovies(): Observable<any> {
+  public getMovies(): Observable<ListMovie> {
 
     const headers = new HttpHeaders()
       .set('Authorization', environment.authorization)
       .set('Content-Type', 'application/json');
 
-    const apiKey = environment.apiKey; // Reemplaza con tu clave de API de TMDb
-    // this.url = `https://api.themoviedb.org/3/account/19543049/lists?page=1?api_key=${apiKey}`;
-    this.url = `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=2`;
+    const params = new HttpParams()
+      .set('language', 'es-ES');
 
-    return this.http.get<any>(this.url, {headers});
+    const apiKey = environment.apiKey;
 
-  // Armar objeto, buscar paginación
+    return this.http.get<ListMovie>(this.url, { headers, params});
+
+    // Armar objeto, buscar paginación
   }
 }

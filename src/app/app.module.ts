@@ -4,12 +4,14 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
+import { MoviesComponent } from './components/movies/movies.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    MoviesComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
