@@ -1,0 +1,35 @@
+<div class="card mb-3 mt-5" style="max-width: 1140px;">
+    <div class="row g-0">
+        <div class="col-md-3">
+            <img src="{{urlGetImage}}{{movie.poster_path}}" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{movie.title}}</h5>
+                <p class="card-text">{{movie.overview}}</p>
+                <h5>Generos: </h5>
+
+                <div class="genres">
+                    <p class="card-text" style="font-weight:bold" *ngFor="let genre of movie.genres">
+                        <span class="badge rounded-pill bg-info text-dark">{{genre.name}}</span>
+                    </p>
+                </div>
+               
+                <p class="card-text" style="font-weight:bold">
+                    Fecha de estreno
+                    <span class="badge bg-secondary" style="font-weight:bold">{{movie.release_date}}</span>
+                </p>
+                <p class="card-text" style="font-weight:bold">
+                    Duración
+                    <span class="badge bg-primary" style="font-weight:bold">{{movie.runtime}} min</span>
+                </p>
+                <p class="card-text" style="font-weight:bold">
+                    Calificación
+                    <span class="badge rounded-pill bg-warning text-dark">{{movie.vote_average}}</span>
+                </p>
+                <a href="https://youtu.be/nWiQodhMvz4" class="card-link" target="_blank">
+                    <button type="button" class="btn btn-outline-primary">Ver Trailer</button></a>
+            </div>
+        </div>
+    </div>
+</div>
