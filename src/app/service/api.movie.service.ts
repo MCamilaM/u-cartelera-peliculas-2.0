@@ -33,8 +33,6 @@ export class ApiMovieService {
     const headers = this.getHeader()
     const params = this.getParams()
 
-    // const apiKey = environment.apiKey;
-
     return this.http.get<DetailMovie>(this.url + id, { headers, params });
   }
 
@@ -42,18 +40,13 @@ export class ApiMovieService {
     const headers = this.getHeader()
     const params = this.getParams()
 
-    // const apiKey = environment.apiKey;
-
-    return this.http.get<Credit>(this.url + id + 'credits', { headers, params });
+    return this.http.get<Credit>(this.url + id + '/credits', { headers, params });
   }
 
   public getImagesMovieById(id: string) {
     const headers = this.getHeader()
-    const params = this.getParams()
 
-    // const apiKey = environment.apiKey;
-
-    return this.http.get<Images>(this.url + id + 'images', { headers, params });
+    return this.http.get<Images>(this.url + id + '/images', { headers });
   }
 
   private getHeader() {

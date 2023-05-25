@@ -14,7 +14,7 @@
                         <span class="badge rounded-pill bg-info text-dark">{{genre.name}}</span>
                     </p>
                 </div>
-               
+
                 <p class="card-text" style="font-weight:bold">
                     Fecha de estreno
                     <span class="badge bg-secondary" style="font-weight:bold">{{movie.release_date}}</span>
@@ -33,3 +33,74 @@
         </div>
     </div>
 </div>
+
+<h2 class="fotos carrusel ">🎬 Fotos de la película</h2>
+
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <ul *ngFor="let image of images.backdrops; let i=index;first as isFirst">
+            <div [ngClass]="isFirst ? 'carousel-item active' : 'carousel-item' ">
+                <img src="{{urlGetImage}}{{image.file_path}}" class="d-block w-100" alt="...">
+            </div>
+        </ul>
+    </div>
+    <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+<!-- Actores -->
+<h2 class="fotos carrusel ps-5">🎭 Actores</h2>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 m-4 flex-center align-items-center" id="movie-catalog">
+
+    <div class="card m-5 shadow p-3 mb-5 bg-white mask border border-secondary" *ngFor="let actor of credits.cast"
+        style="width: 18rem;">
+        <img [src]="validateImageActor(actor)" #svg class="d-block w-100" alt="..." />
+        <div class="card-body">
+            <p class="card-text">{{actor.original_name}} | {{actor.character}}</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- Fin Actores -->
+
+<!--Comentarios-->
+<h2 class="fotos carrusel ps-5">💬 Comentarios</h2>
+
+<!-- <form class="row g-3">
+    <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Email</label>
+        <input type="text" class="form-control" id="inputEmail4">
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary" [ngModel="newComment"
+            placeholder="Escribe un comentario"></button>
+    </div>
+</form> -->
+
+<div class="card mb-3" style="max-width: 540px; background: #1B2831;">
+    <div class="row g-0 mb-3 rounded-3" *ngFor="let comment of comments; let i=index;" style="background: #34536b;">
+        <div class="col-md-2 p-3">
+            <img src="./assets/img/user2.png" style="width: 100%;" class="img-fluid rounded-start" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title" style="color: #ffffff">User</h5>
+                <p class="card-text" style="color: #ffffff">dfdfdfdfdfdfdfdf </p>
+            </div>
+        </div>
+        <div class="col-md-2 p-3">
+            <button type="button" class="btn btn-danger" (click)="deleteComment(i)">X</button>
+        </div>
+    </div>
+</div>
+
+<!--fin Comentarios-->

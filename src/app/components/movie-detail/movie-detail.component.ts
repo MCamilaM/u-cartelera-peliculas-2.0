@@ -15,9 +15,11 @@ export class MovieDetailComponent implements OnInit {
   movie!: DetailMovie;
   credits!: Credit;
   images!: Images;
-  comments: string[] = []
-  movieId: string = ''
-  urlGetImage = 'https://image.tmdb.org/t/p/original/'
+  comments: string[] = ["dfdf", "sss"];
+  movieId: string = '';
+  urlGetImage = 'https://image.tmdb.org/t/p/original/';
+  imgDefaultActor:string='./images/actor-default.png';
+  inputComment:string = ''
 
   constructor(private route: ActivatedRoute, private apiMovieService: ApiMovieService) {
 
@@ -26,6 +28,8 @@ export class MovieDetailComponent implements OnInit {
   ngOnInit(): void {
     this.movieId = this.route.snapshot.params['id'];
     this.getMovie();
+    this.getCredits();
+    this.getImages();
   }
 
   getMovie(){
@@ -36,7 +40,9 @@ export class MovieDetailComponent implements OnInit {
 
   getCredits(){
     this.apiMovieService.getCreditsMovieById(this.movieId).subscribe(credits => {
-      this.credits = credits;
+      this.credits = credits
+      const actors = credits.cast.filter(actor => actor.known_for_department === 'Acting');
+      this.credits.cast = actors
     })
   }
 
@@ -44,6 +50,22 @@ export class MovieDetailComponent implements OnInit {
     this.apiMovieService.getImagesMovieById(this.movieId).subscribe(images => {
       this.images = images;
     })
+  }
+
+  validateImageActor(actor:any) {
+    if (actor.profile_path != null) {
+        return `${this.urlGetImage}${actor.profile_path}`;
+    } else {
+        return './assets/img/actordefault.png';
+    }
+}
+
+  addComment(comment:string){
+    this.comments.push(comment);
+  }
+
+  deleteComment(index:number){
+    this.comments.splice(index,1)
   }
 
   //Función agregar comentario
