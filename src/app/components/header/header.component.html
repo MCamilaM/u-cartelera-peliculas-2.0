@@ -1,17 +1,16 @@
 <div>
     <header>
         <!-- Navbar -->
-        <nav class="navbar navbar-dark bg-dark justify-content-between p-3">
+        <nav class="navbar navbar-dark bg-light justify-content-between p-3">
             <a routerLink="movies">
-                <img src="img/popcorn.png" alt="Logo" width="35" height="35" class="d-inline-block align-text-top">
-                FilmStars
+                <img src="./assets/img/logoFilmStars2.png" alt="Logo" width="100" height="100" class="d-inline-block align-text-top">
             </a>
             <form class="d-flex">
 
                 <!-- Dropdown Filters -->
                 <div class="dropdown ms-5 me-4 ">
-                    <select name="select" class="btn btn-secondary dropdown-toggle fw-bold" type="button"
-                        id="dropdownMenuButton2" onchange="ShowSelected();">
+                    <select [(ngModel)]="opcionSeleccionado" (change)="getOptionFilter()" name="select" class="btn btn-secondary dropdown-toggle fw-bold" type="button"
+                        id="dropdownMenuButton2">
                         <option value="value0" selected>Filtros</option>
                         <option value="a-z">A - Z</option>
                         <option value="antiguas">Mas antiguas</option>
@@ -21,7 +20,7 @@
                 </div>
 
                 <!-- Search -->
-                <input class="form-control me-2 mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                <input [(ngModel)]="movie" (change)="searchMovie()" name="input" class="form-control me-2 mr-sm-2" type="search" placeholder="Search" aria-label="Search"
                     id="box-search">
                 <button class="btn btn-outline-success pmy-2 my-sm-0" type="submit"
                     id="button-search">Search</button>
