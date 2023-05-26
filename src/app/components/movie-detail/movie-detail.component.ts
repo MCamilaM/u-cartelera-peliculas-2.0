@@ -16,7 +16,7 @@ export class MovieDetailComponent implements OnInit {
   movie!: DetailMovie;
   credits!: Credit;
   images!: Images;
-  comments: string[] = ["Buena pelicula", "La recomiendo 10/10"];
+  comments: string[] = [];
   movieId: string = '';
   urlGetImage = 'https://image.tmdb.org/t/p/original/';
   imgDefaultActor:string='./images/actor-default.png';

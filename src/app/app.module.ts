@@ -10,6 +10,8 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
     MoviesComponent,
     HeaderComponent,
     HomeComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    FooterComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,
