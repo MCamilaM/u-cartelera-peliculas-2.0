@@ -130,15 +130,18 @@ export class MoviesComponent implements OnInit {
 
   searchMovie(movie:any){
 
-    console.log(movie)
+    if(movie === ''){
+      this.loadMovies()
+    }
 
     const allMovies = this.movies
 
     const textToSearch = movie.toLowerCase();
 
-    allMovies.results.filter(movie => movie.title.toLowerCase().indexOf(textToSearch) !== -1 )
+    const moviesFiltradas = this.movies.results.filter(movie => movie.title.toLowerCase().indexOf(textToSearch) > -1)
 
-  
+    allMovies.results = moviesFiltradas
+
     this.movies = allMovies
 
     }
