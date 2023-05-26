@@ -4,6 +4,7 @@ import { Credit } from 'src/app/models/creditmovie-i.movie';
 import { DetailMovie } from 'src/app/models/detailmovie-i.model';
 import { Images } from 'src/app/models/imagesmovie-i.movie';
 import { ApiMovieService } from 'src/app/service/api.movie.service';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-movie-detail',
@@ -15,11 +16,11 @@ export class MovieDetailComponent implements OnInit {
   movie!: DetailMovie;
   credits!: Credit;
   images!: Images;
-  comments: string[] = ["dfdf", "sss"];
+  comments: string[] = ["Buena pelicula", "La recomiendo 10/10"];
   movieId: string = '';
   urlGetImage = 'https://image.tmdb.org/t/p/original/';
   imgDefaultActor:string='./images/actor-default.png';
-  inputComment:string = ''
+  inputNewComment:string = '';
 
   constructor(private route: ActivatedRoute, private apiMovieService: ApiMovieService) {
 
@@ -60,8 +61,11 @@ export class MovieDetailComponent implements OnInit {
     }
 }
 
-  addComment(comment:string){
-    this.comments.push(comment);
+  addComment(){
+    // if (this.inputNewComment.trim() !== '') {
+      this.comments.push(this.inputNewComment);
+      this.inputNewComment = '';
+    // }
   }
 
   deleteComment(index:number){

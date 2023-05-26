@@ -67,24 +67,22 @@
             <p class="card-text">{{actor.original_name}} | {{actor.character}}</p>
         </div>
     </div>
-
 </div>
 
 <!-- Fin Actores -->
 
+
 <!--Comentarios-->
 <h2 class="fotos carrusel ps-5">💬 Comentarios</h2>
 
-<!-- <form class="row g-3">
+<form class="row g-3">
     <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Email</label>
-        <input type="text" class="form-control" id="inputEmail4">
+        <input [(ngModel)]="inputNewComment"  name="input" type="text" class="form-control">
     </div>
     <div class="col-12">
-        <button type="submit" class="btn btn-primary" [ngModel="newComment"
-            placeholder="Escribe un comentario"></button>
+        <button type="button" class="btn btn-primary" (click)="addComment()">Agregar Comentario</button>
     </div>
-</form> -->
+</form>
 
 <div class="card mb-3" style="max-width: 540px; background: #1B2831;">
     <div class="row g-0 mb-3 rounded-3" *ngFor="let comment of comments; let i=index;" style="background: #34536b;">
@@ -94,7 +92,7 @@
         <div class="col-md-8">
             <div class="card-body">
                 <h5 class="card-title" style="color: #ffffff">User</h5>
-                <p class="card-text" style="color: #ffffff">dfdfdfdfdfdfdfdf </p>
+                <p class="card-text" style="color: #ffffff">{{comment}}</p>
             </div>
         </div>
         <div class="col-md-2 p-3">
