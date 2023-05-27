@@ -1,4 +1,5 @@
-<div class="card mb-3 mt-5" style="max-width: 1140px;">
+<div class="contenedor" id="contenedorPadre">
+<div class="card mb-3 mt-5" style="max-width: 1140px;" id="contenedorHijo">
     <div class="row g-0">
         <div class="col-md-3">
             <img src="{{urlGetImage}}{{movie.poster_path}}" class="img-fluid rounded-start" alt="...">
@@ -27,11 +28,10 @@
                     Calificación
                     <span class="badge rounded-pill bg-warning text-dark">{{movie.vote_average}}</span>
                 </p>
-                <a href="https://youtu.be/nWiQodhMvz4" class="card-link" target="_blank">
-                    <button type="button" class="btn btn-outline-primary">Ver Trailer</button></a>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <h2 class="fotos carrusel ">🎬 Fotos de la película</h2>
@@ -59,7 +59,6 @@
 <h2 class="fotos carrusel ps-5">🎭 Actores</h2>
 
 <div class="row row-cols-1 row-cols-md-3 g-4 m-4 flex-center align-items-center" id="movie-catalog">
-
     <div class="card m-5 shadow p-3 mb-5 bg-white mask border border-secondary" *ngFor="let actor of credits.cast"
         style="width: 18rem;">
         <img [src]="validateImageActor(actor)" #svg class="d-block w-100" alt="..." />
@@ -84,19 +83,21 @@
     </div>
 </form>
 
-<div class="card mb-3" style="max-width: 540px; background: #1B2831;">
-    <div class="row g-0 mb-3 rounded-3" *ngFor="let comment of comments; let i=index;" style="background: #34536b;">
-        <div class="col-md-2 p-3">
-            <img src="./assets/img/user2.png" style="width: 100%;" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title" style="color: #ffffff">User</h5>
-                <p class="card-text" style="color: #ffffff">{{comment}}</p>
+<div class="user">
+    <div class="card mb-3" style="max-width: 540px; background: #1B2831;">
+        <div class="row g-0 mb-3 rounded-3" *ngFor="let comment of comments; let i=index;" style="background: #34536b;">
+            <div class="col-md-2 p-3">
+                <img src="./assets/img/user2.png" style="width: 100%;" class="img-fluid rounded-start" alt="...">
             </div>
-        </div>
-        <div class="col-md-2 p-3">
-            <button type="button" class="btn btn-danger" (click)="deleteComment(i)">X</button>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #ffffff">User</h5>
+                    <p class="card-text" style="color: #ffffff">{{comment}}</p>
+                </div>
+            </div>
+            <div class="col-md-2 p-3">
+                <button type="button" class="btn btn-danger" (click)="deleteComment(i)">X</button>
+            </div>
         </div>
     </div>
 </div>
