@@ -1,6 +1,6 @@
 Este proyecto es una actividad de la materia desarrollo de Front-End, la cual consiste en desarrollar una página web, donde se encontraran una cartelera de películas, con su respectivos detalle (Fotos, link a trailer, puntaje, actores, entre otros) y su sección de comentarios.
 
---
+---
 
 ![App Screenshot - home](src/assets/img/readme/home.jpg)
 
@@ -8,11 +8,11 @@ Este proyecto es una actividad de la materia desarrollo de Front-End, la cual co
 
 ![App Screenshot - detail](src/assets/img/readme/detail.jpg)
 
---
+---
 
 ![App Screenshot - actors](src/assets/img/readme/actors.jpg)
 
---
+---
 
 ![App Screenshot - comments](src/assets/img/readme/comments.jpg)
 
