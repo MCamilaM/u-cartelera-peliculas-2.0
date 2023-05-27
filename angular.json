@@ -40,6 +40,9 @@
             ]
           },
           "configurations": {
+            "github-pages": {
+              "baseHref": "/u-cartelera-peliculas-2.0/"
+            },
             "production": {
               "budgets": [
                 {
