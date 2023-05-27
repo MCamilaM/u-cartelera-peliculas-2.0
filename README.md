@@ -1,3 +1,22 @@
+Este proyecto es una actividad de la materia desarrollo de Front-End, la cual consiste en desarrollar una página web, donde se encontraran una cartelera de películas, con su respectivos detalle (Fotos, link a trailer, puntaje, actores, entre otros) y su sección de comentarios.
+
+--
+
+![App Screenshot](src\assets\img\readme\home.jpg)
+
+---
+
+![App Screenshot](src\assets\img\readme\detail.jpg)
+
+--
+
+![App Screenshot](src\assets\img\readme\actors.jpg)
+
+--
+
+![App Screenshot](src\assets\img\readme\comments.jpg)
+
+
 # UCarteleraPeliculas
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
