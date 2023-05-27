@@ -2,19 +2,19 @@ Este proyecto es una actividad de la materia desarrollo de Front-End, la cual co
 
 --
 
-![App Screenshot](src\assets\img\readme\home.jpg)
+![App Screenshot - home](src/assets/img/readme/home.jpg)
 
 ---
 
-![App Screenshot](src\assets\img\readme\detail.jpg)
+![App Screenshot - detail](src/assets/img/readme/detail.jpg)
 
 --
 
-![App Screenshot](src\assets\img\readme\actors.jpg)
+![App Screenshot - actors](src/assets/img/readme/actors.jpg)
 
 --
 
-![App Screenshot](src\assets\img\readme\comments.jpg)
+![App Screenshot - comments](src/assets/img/readme/comments.jpg)
 
 
 # UCarteleraPeliculas
