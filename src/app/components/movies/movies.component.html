@@ -1,3 +1,18 @@
+<nav aria-label="Page navigation example ">
+    <ul class="pagination ">
+      <li class="page-item">
+        <button class="page-link " aria-label="Previous" (click)="onChangePreviousPage()" [disabled]="currentPage ===1">
+          <span aria-hidden="true">&laquo; previous</span>
+        </button>
+      </li>
+      <li class="page-item">
+        <button class="page-link" aria-label="Next" (click)="onChangeNextPage()" [disabled]="currentPage === totalPages">
+          <span aria-hidden="true"> next &raquo;</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
 <!-- <div class="cardmovie"> -->
 <div class="row row-cols-1 row-cols-md-3 g-4" id="movie-catalog">
     <div class="col" *ngFor="let movie of movies.results">
@@ -19,3 +34,18 @@
     </div>
 </div>
 <!-- </div> -->
+
+<nav aria-label="Page navigation example ">
+  <ul class="pagination ">
+    <li class="page-item">
+      <button class="page-link " aria-label="Previous" (click)="onChangePreviousPage()" [disabled]="currentPage ===1">
+        <span aria-hidden="true">&laquo; previous</span>
+      </button>
+    </li>
+    <li class="page-item">
+      <button class="page-link" aria-label="Next" (click)="onChangeNextPage()" [disabled]="currentPage === totalPages">
+        <span aria-hidden="true"> next &raquo;</span>
+      </button>
+    </li>
+  </ul>
+</nav>

@@ -18,10 +18,10 @@ export class ApiMovieService {
   constructor(private http: HttpClient) {
   }
 
-  public getMovies(): Observable<ListMovie> {
+  public getMovies(numberPage:number): Observable<ListMovie> {
 
     const headers = this.getHeader()
-    const params = this.getParams()
+    const params = this.getParams(numberPage)
     // const apiKey = environment.apiKey;
 
     return this.http.get<ListMovie>(this.url + 'now_playing', { headers, params });
@@ -31,14 +31,14 @@ export class ApiMovieService {
   public getMovieById(id: string) {
 
     const headers = this.getHeader()
-    const params = this.getParams()
+    const params = this.getParams(1)
 
     return this.http.get<DetailMovie>(this.url + id, { headers, params });
   }
 
   public getCreditsMovieById(id: string) {
     const headers = this.getHeader()
-    const params = this.getParams()
+    const params = this.getParams(1)
 
     return this.http.get<Credit>(this.url + id + '/credits', { headers, params });
   }
@@ -55,8 +55,9 @@ export class ApiMovieService {
       .set('Content-Type', 'application/json');
   }
 
-  private getParams() {
+  private getParams(numberPage:number) {
     return new HttpParams()
-      .set('language', 'es-ES');
+      .set('language', 'es-ES')
+      .set('page', numberPage)
   }
 }

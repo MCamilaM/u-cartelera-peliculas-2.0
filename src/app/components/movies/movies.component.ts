@@ -13,8 +13,9 @@ export class MoviesComponent implements OnInit {
   @Input() name!: string
 
   movies!: ListMovie;
-  fruta: string[] = ["manzana", "pera"];
   urlGetImage = 'https://image.tmdb.org/t/p/original/'
+  currentPage: number = 1
+  totalPages: number = 0
 
   constructor(private apiMovieService: ApiMovieService, private servicio: FilterService) {
 
@@ -31,8 +32,9 @@ export class MoviesComponent implements OnInit {
   }
 
   loadMovies() {
-    this.apiMovieService.getMovies().subscribe(movies => {
+    this.apiMovieService.getMovies(this.currentPage).subscribe(movies => {
       this.movies = movies;
+      this.totalPages = movies.total_pages
     })
   }
 
@@ -128,9 +130,9 @@ export class MoviesComponent implements OnInit {
 
   }
 
-  searchMovie(movie:any){
+  searchMovie(movie: any) {
 
-    if(movie === ''){
+    if (movie === '') {
       this.loadMovies()
     }
 
@@ -144,8 +146,21 @@ export class MoviesComponent implements OnInit {
 
     this.movies = allMovies
 
-    }
+  }
 
-  
-  
+  onChangeNextPage() {
+    this.currentPage++;
+    console.log(this.currentPage);
+
+    this.loadMovies();
+  }
+
+  onChangePreviousPage(){
+    this.currentPage--;
+    console.log(this.currentPage);
+
+    this.loadMovies();
+  }
+
+
 }
